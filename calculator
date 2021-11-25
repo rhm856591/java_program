@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+class calculator {
+
+    // private static final int z = 0;
+
+    public static void main(String[] arr) {
+        int a, b,z;
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("1 addition");
+            System.out.println("2 minus");
+            System.out.println("3 division");
+            System.out.println("4 multiply");
+            System.out.println("5 Exit");
+            System.out.println("Enter your choice:");
+            z = sc.nextInt();
+
+            int c;
+            switch (z) {
+
+            case 1:
+                System.out.println("Enter the value of A and B:");
+
+                a = sc.nextInt();
+                b = sc.nextInt();
+                c = a + b;
+                System.out.println("additon is=" + c);
+                break;
+            case 2:
+                System.out.println("Enter the value of A and B:");
+
+                a = sc.nextInt();
+                b = sc.nextInt();
+                c = a - b;
+                System.out.println("minus =" + c);
+                break;
+            case 3:
+                System.out.println("Enter the value of A and B:");
+
+                a = sc.nextInt();
+                b = sc.nextInt();
+                c = a / b;
+                System.out.println("division =" + c);
+                break;
+            case 4:
+                System.out.println("Enter the value of A and B:");
+
+                a = sc.nextInt();
+                b = sc.nextInt();
+                c = a * b;
+                System.out.println("multiply =" + c);
+                break;
+            case 5:
+                System.out.println("Exit");
+                break;
+            default:
+                System.out.println("You enter wrong key:");
+                break;
+
+            }
+            System.out.println("===================================");
+
+        } while (z!=5);
+    }
+}
