@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class year_calculator {
+    public static void main(String[] arr) {
+        Scanner sc = new Scanner(System.in);
+        int year, choice;
+        int c;
+        do {
+            System.out.println("1 Convert in year to minuts" + "\n" + "2 Convert in year to seconds" + "\n"
+                    + "3 Convert in year to das" + "\n"+"4 Convert in year to months\n" + "5 Convert in year to hours" + "\n" + "6 Exit");
+            System.out.println("Enter your choice");
+            choice = sc.nextInt();
+            System.out.println("Enter the year::");
+            year = sc.nextInt();
+            switch (choice) {
+            case 1:
+                c = year * 365 * 24 * 60;
+                System.out.println("Convert in year to minuts = " + c);
+                break;
+            case 2:
+                c = year * 365 * 24 * 60 * 60;
+                System.out.println("Convert in year to seconds = " + c);
+                break;
+            case 3:
+                c = year * 365;
+                System.out.println("Convert in year to days = " + c);
+                break;
+            case 4:
+                c = year * 12;
+                System.out.println("Convert in year to months = " + c);
+                break;
+            case 5:
+                c = year * 365 * 24;
+                System.out.println("Convert in year to hours = " + c);
+                break;
+            case 6:
+                System.out.println("Exit");
+                break;
+
+            default:
+                System.out.println("You enter wrong key");
+                break;
+            }
+            System.out.println("================================================");
+        } while (6 != choice);
+    }
+}
