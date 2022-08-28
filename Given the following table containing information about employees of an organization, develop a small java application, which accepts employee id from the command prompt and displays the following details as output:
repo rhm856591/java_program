@@ -1,0 +1,98 @@
+package com.w3epic.wiprotraining;
+
+import java.util.*;
+
+public class exp_1 {
+    public static String[][] ETable=new String[][] {
+            {"1001","Ashish","01/04/2009","e","R&D","20000","8000","3000"},
+            {"1002","Sushma","23/08/2012","c","PM","30000","12000", "9000"},
+            {"1003","Rahul","12/11/2008","k","Acct","10000","8000","1000"},
+            {"1004","Chahat","29/01/2013","r","FrontDesk", "12000","6000","2000"},
+            {"1005","Ranjan","16/07/2005","m","Engg","50000","20000","20000"},
+            {"1006","Suman","1/1/2000","e","Manufacturing","23000","9000","4400"},
+            {"1007","Tanmay","12/06/2006","c","PM","29000","12000","10000"}
+    };
+
+    public static String[][] DTable=new String[][] {
+            {"e","Engineer","20000"},
+            {"c","Consultant","32000"},
+            {"k","Clerk","12000"},
+            {"r","Receptionist","15000"},
+            {"m","Manager","40000"}
+    };
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter Employee ID: ");
+        String id=scan.nextLine();
+        boolean t=false;
+        int t1=0;
+        for(int i=0;i<7;i++)
+        {
+            if(id.equals(ETable[i][0]))
+            {
+                t=true;
+                t1=i;
+            }
+        }
+        if(!t)
+        {
+            System.out.println("There is no employee with id "+id);
+        }
+        else
+        {
+            String code=ETable[t1][3];
+            String name=ETable[t1][1];
+            String department=ETable[t1][4];
+            String no=ETable[t1][0];
+            int basic,hra,it,da,salary=0;
+            String deg="";
+            switch(code)
+            {
+                case "e":
+                    basic=Integer.parseInt(ETable[t1][5]);
+                    hra=Integer.parseInt(ETable[t1][6]);
+                    it=Integer.parseInt(ETable[t1][7]);
+                    da=20000;
+                    salary=basic+hra-it+da;
+                    deg="Engineer";
+                    break;
+                case "c":
+                    basic=Integer.parseInt(ETable[t1][5]);
+                    hra=Integer.parseInt(ETable[t1][6]);
+                    it=Integer.parseInt(ETable[t1][7]);
+                    da=32000;
+                    salary=basic+hra-it+da;
+                    deg="Consultant";
+                    break;
+                case "k":
+                    basic=Integer.parseInt(ETable[t1][5]);
+                    hra=Integer.parseInt(ETable[t1][6]);
+                    it=Integer.parseInt(ETable[t1][7]);
+                    da=12000;
+                    salary=basic+hra-it+da;
+                    deg="Clerk";
+                    break;
+                case "r":
+                    basic=Integer.parseInt(ETable[t1][5]);
+                    hra=Integer.parseInt(ETable[t1][6]);
+                    it=Integer.parseInt(ETable[t1][7]);
+                    da=15000;
+                    salary=basic+hra-it+da;
+                    deg="Receptionist";
+                    break;
+                case "m":
+                    basic=Integer.parseInt(ETable[t1][5]);
+                    hra=Integer.parseInt(ETable[t1][6]);
+                    it=Integer.parseInt(ETable[t1][7]);
+                    da=40000;
+                    salary=basic+hra-it+da;
+                    deg="Manager";
+                    break;
+            }
+            System.out.printf("%-10s%-10s%-15s%-15s%-10s\n","EmpNo.","EmpName","Department","Designation","Salary");
+            System.out.printf("%-10s%-10s%-15s%-15s%-10s",no,name,department,deg,salary);
+        }
+        scan.close();
+    }
+}
