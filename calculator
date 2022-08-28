@@ -1,66 +1,48 @@
-import java.util.Scanner;
+import java.util.*;
 
-class calculator {
-
-    // private static final int z = 0;
-
-    public static void main(String[] arr) {
-        int a, b,z;
+public class calculator {
+    public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
+        int button,a,b;
         do {
-            System.out.println("1 addition");
-            System.out.println("2 minus");
-            System.out.println("3 division");
-            System.out.println("4 multiply");
-            System.out.println("5 Exit");
-            System.out.println("Enter your choice:");
-            z = sc.nextInt();
-
-            int c;
-            switch (z) {
-
-            case 1:
-                System.out.println("Enter the value of A and B:");
-
-                a = sc.nextInt();
-                b = sc.nextInt();
-                c = a + b;
-                System.out.println("additon is=" + c);
-                break;
-            case 2:
-                System.out.println("Enter the value of A and B:");
-
-                a = sc.nextInt();
-                b = sc.nextInt();
-                c = a - b;
-                System.out.println("minus =" + c);
-                break;
-            case 3:
-                System.out.println("Enter the value of A and B:");
-
-                a = sc.nextInt();
-                b = sc.nextInt();
-                c = a / b;
-                System.out.println("division =" + c);
-                break;
-            case 4:
-                System.out.println("Enter the value of A and B:");
-
-                a = sc.nextInt();
-                b = sc.nextInt();
-                c = a * b;
-                System.out.println("multiply =" + c);
-                break;
-            case 5:
-                System.out.println("Exit");
-                break;
-            default:
-                System.out.println("You enter wrong key:");
-                break;
-
+            System.out.print(
+                    "1 : + (Addition) a + b\n" +
+                    "2 : - (Subtraction) a - b\n" +
+                    "3 : * (Multiplication) a * b\n" +
+                    "4 : / (Division) a / b\n" +
+                    "5 : % (Modulo or remainder) a % b\n" +
+                    "6 : Exit\n");
+            System.out.println("Enter your option(1..6): ");
+            button = sc.nextInt();
+            if(button==6){
+                System.out.println("Exit success..");
+                System.exit(0);
             }
-            System.out.println("===================================");
-
-        } while (z!=5);
+            System.out.println("Enter your first number");
+            a = sc.nextInt();
+            System.out.println("Enter your second number");
+            b = sc.nextInt();
+            switch (button) {
+                case 1:
+                    System.out.println("Output is a + b = "+a + b);
+                    break;
+                case 2:
+                    System.out.print("Output is a - b = ");
+                    System.out.println(a - b);
+                    break;
+                case 3:
+                    System.out.println("Output is a * b = "+a * b);
+                    break;
+                case 4:
+                    System.out.println("Output is a / b = "+a / b);
+                    break;
+                case 5:
+                    System.out.println("Output is a % b = "+a % b);
+                    break;
+                default:
+                    System.out.println("Enter wrong button");
+            }
+        }while (button != 6);
     }
 }
+
